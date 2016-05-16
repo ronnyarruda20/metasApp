@@ -1,0 +1,30 @@
+[
+	{
+
+	},
+	{
+		"id":1,
+		"nome": "ANNA PAULA GOMES DE FREITAS",
+		"cartorio": "CARTORIO DA 24 ZONA ELEITORAL",
+        "cidade": "ALTA FLORESTA"    
+    },
+    {
+    	"id":2,
+		"nome": "ANTÔNIO CARLOS PEREIRA DE SOUZA JÚNIOR",
+		"cartorio": "CARTORIO DA 52 ZONA ELEITORAL",
+        "cidade": "SÃO JOSÉ DOS QUATRO MARCOS"
+    },
+    {
+    	"id":3,
+		"nome": "AROLDO JOSÉ ZONTA BURGARELLI",
+		"cartorio": "CARTORIO DA 53 ZONA ELEITORAL",
+        "cidade": "RIBEIRAO CASCALHEIRA"
+    },
+    {
+    	"id":4,
+		"nome": "CAROLINE SCHNEIDER GUANAES SIMÕES",
+		"cartorio": "CARTORIO DA 12 ZONA ELEITORAL",
+    	"cidade": "CAMPO VERDE"
+    }
+
+]

@@ -1,0 +1,24 @@
+<ion-view  view-title="Magistrado 1 Grau"  >
+<ion-content > 
+
+   <div>
+    <label class="item item-input">
+      <input type="text" placeholder="Filtrar por nome do magistrado...">
+    </label>
+
+    <label class="item item-input">
+      <input type="text" placeholder="Filtrar por nome do órgão...">
+    </label>
+  </div>
+
+   <ion-list ng-controller="MasgitradoCtrl"  >
+	   <div class="bar bar-header bar-stable" >
+	      <span class="title ion-person">Magistrados</span>
+	   </div>
+	
+      <ion-item ng-repeat="magistrado in magistrados"  href="#/app/lista1grau/{{magistrado.id}}">
+      	<h3>{{magistrado.nome}}</h3>
+      	<p>{{magistrado.cartorio}} - {{magistrado.cidade}}</p>
+      </ion-item>
+  </ion-content> 
+</ion-view>

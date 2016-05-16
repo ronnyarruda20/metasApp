@@ -1,0 +1,15 @@
+{
+	magistrados: [
+		{
+		  nome: "ANNA PAULA GOMES DE FREITAS"
+		  cartorio: "CARTORIO DA 24 ZONA ELEITORAL"
+		}
+		,
+		{
+		  nome: "ANTÔNIO CARLOS PEREIRA DE SOUZA JÚNIOR"
+		  cartorio: "CARTORIO DA 52 ZONA ELEITORAL"
+		}
+	   
+	]
+	
+}
