@@ -1,4 +1,6 @@
-angular.module('starter', ['ionic', 'starter.controllers','MagistradoServices'])
+'use strict';
+
+angular.module('starter', ['ionic', 'starter.controllers','MetasAppServices'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,28 +25,29 @@ angular.module('starter', ['ionic', 'starter.controllers','MagistradoServices'])
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
+    controller: 'MetaController'
   })
 
-  .state('app.magistrados1grau', {
-    url: '/lista1grau',
+  .state('app.magistrado', {
+    url: '/lista',
     views: {
       'menuContent': {
         templateUrl: 'templates/listaMagistrado.html',
-        controller: 'MasgitradoCtrl'
+        controller: 'MetaController'
       }
     }
   })
 
-   .state('app.magistrado', {
-    url: '/lista1grau/:processoId',
+   .state('app.magistradoItem', {
+    url: '/listaItem',
     views: {
       'menuContent': {
         templateUrl: 'templates/magistradoItem.html',
-        controller: 'MasgitradoCtrl'
+        controller: 'MetaController'
       }
     }
   })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/lista1grau');
+  $urlRouterProvider.otherwise('/app/lista');
 });

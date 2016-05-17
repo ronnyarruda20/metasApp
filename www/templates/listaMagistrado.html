@@ -1,24 +1,50 @@
-<ion-view  view-title="Magistrado 1 Grau"  >
-<ion-content > 
+<ion-view  view-title="{{grau | grauEstendido}}"  >
+<ion-content ng-controller="MetaController"> 
 
-   <div>
-    <label class="item item-input">
-      <input type="text" placeholder="Filtrar por nome do magistrado...">
-    </label>
 
-    <label class="item item-input">
-      <input type="text" placeholder="Filtrar por nome do órgão...">
-    </label>
+<div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+   <input type="text" class="form-control" placeholder="Filtrar por nome do magistrado..." ng-model="search.magistrado">
+  </label>
+</div>
+
+   <ion-list  >
+       <div class="row" ng-show="loadingProdutividades">
+      <div class="col-md-12">
+        <div class="alert alert-info">
+          <b>Obtendo informações para o período {{mes | mesEstendido}}/{{ano}}.</b>
+          <br/>
+          Por favor, aguarde...
+        </div>
+      </div>
+    </div>
+
+<!-- filto quando funfando>
+    <div class="tab-content">
+      <div class="form-group">
+        <label>Magistrado</label>
+        <input type="text" class="form-control" placeholder="Filtrar por nome do magistrado..." ng-model="search.magistrado">
+      </div>
+      
+      <div class="form-group" ng-show="grau ===1">
+        <label>Serventia</label>
+        <input type="text" class="form-control" placeholder="Filtrar por nome do órgão..." ng-model="search.orgao">
+      </div>
+
+      <div class="form-group" ng-show="grau ===2">
+        <label>Tipo de decisão</label>
+        <select class="form-control" ng-model="decisao">
+          <option ng-repeat="opt in tiposDecisao" value="{{opt}}">{{opt | tipoDecisaoEstendida}}</option>
+        </select>
+      </div>
   </div>
+  -->
 
-   <ion-list ng-controller="MasgitradoCtrl"  >
-	   <div class="bar bar-header bar-stable" >
-	      <span class="title ion-person">Magistrados</span>
-	   </div>
-	
-      <ion-item ng-repeat="magistrado in magistrados"  href="#/app/lista1grau/{{magistrado.id}}">
-      	<h3>{{magistrado.nome}}</h3>
-      	<p>{{magistrado.cartorio}} - {{magistrado.cidade}}</p>
+      <ion-item ng-repeat="item in produtividades | filter:search" href="#/app/listaItem">
+      	<h3>{{item.magistrado}}</h3>
+      	<p>{{item.orgao}}</p>
       </ion-item>
+
   </ion-content> 
 </ion-view>

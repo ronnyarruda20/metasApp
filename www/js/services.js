@@ -1,35 +1,25 @@
+'use strict';
+
+angular.module('MetasAppServices', ['ngResource'])
 
 
-angular.module('MagistradoServices', ['ngResource'])
+  .factory('MetasAppProdutividade', ['$resource',  function($resource) {
+  
+    return $resource('http://apps.tre-mt.jus.br/metas-cnj/metas7/produtividade/:ano/:mes/:grau', {}, {
+    
+      query: {method:'GET', isArray:true, timeout: 20000}
+      
+    });
+    
+  }])
 
-.factory('magistradoDados', function ($resource) {
-    return $resource("http://localhost:8100/json/magistrados.json" );
-    })
+ .factory('Metas7Processos', ['$resource', function($resource) {
 
-.factory('processosDados', function ($resource) {
-    return $resource("http://localhost:8100/json/processos/:processoId.json" ,{processoId: "processoId"});
+    return $resource('http://apps.tre-mt.jus.br/metas-cnj/metas7/processos/:ano/:mes/:grau/:magistrado/:orgao/:indicador', {}, {
+      
+      query : {method:'GET', isArray:true, timeout: 20000}
+    
     });
 
-
-/**
-.factory('magistradoDados', function ($resource) {
-    return $resource("http://localhost:8100/json/dados.json");
-    });
-
-.factory('magistradoDados', ['$resource',function($resource){
-    return $resource('json/:magistradoId.json', {}, {
-      query: {method:'GET', params:{magistradoId:'magistrados'}, isArray:true}
-    });
   }]);
 
-factory('magistradoDados', function ($resource) {
-    return $resource('json/:magistradoId');
-});
-
-$resource('http://localhost:8100/json/datas.json')
-
-.factory('magistradoDados', function ($resource) {
-    return $resource("http://localhost:8100/json/datas.json");
-    });
-
-**/
