@@ -41,7 +41,7 @@
   </div>
   -->
 
-      <ion-item ng-repeat="item in produtividades | filter:search" href="#/app/listaItem">
+      <ion-item ng-repeat="item in produtividades | filter:search" href="#/app/lista/{{item.magistradoId}}">
       	<h3>{{item.magistrado}}</h3>
       	<p>{{item.orgao}}</p>
       </ion-item>

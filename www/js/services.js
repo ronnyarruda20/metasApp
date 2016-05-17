@@ -3,7 +3,7 @@
 angular.module('MetasAppServices', ['ngResource'])
 
 
-  .factory('MetasAppProdutividade', ['$resource',  function($resource) {
+  .service('MetasAppProdutividade', ['$resource',  function($resource) {
   
     return $resource('http://apps.tre-mt.jus.br/metas-cnj/metas7/produtividade/:ano/:mes/:grau', {}, {
     
@@ -13,7 +13,7 @@ angular.module('MetasAppServices', ['ngResource'])
     
   }])
 
- .factory('Metas7Processos', ['$resource', function($resource) {
+ .service('Metas7Processos', ['$resource', function($resource) {
 
     return $resource('http://apps.tre-mt.jus.br/metas-cnj/metas7/processos/:ano/:mes/:grau/:magistrado/:orgao/:indicador', {}, {
       
