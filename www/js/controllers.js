@@ -2,7 +2,7 @@
 
 angular.module('starter.controllers', ['MetasAppServices', 'MetasAppFilters', 'MetasAppFilters'])
 
-.controller('MetaController', function($scope, MetasAppProdutividade){
+.controller('MetaController', function($scope, MetasAppProdutividade, $stateParams){
 
   var today = new Date();
 
@@ -11,6 +11,8 @@ angular.module('starter.controllers', ['MetasAppServices', 'MetasAppFilters', 'M
   $scope.grau = 1;
 
   $scope.anos = [];
+
+  $scope.teste = $stateParams.anoId;
 
   /**
    * 
@@ -35,37 +37,6 @@ angular.module('starter.controllers', ['MetasAppServices', 'MetasAppFilters', 'M
 
   $scope.decisao = 'A';
 
-  $scope.setMes = function(input) {
-
-    $scope.mes = input;
-
-    loadProdutividades(true);
-
-  };
-
-  $scope.setAno = function(input) {
-
-    $scope.ano = input;
-
-    loadProdutividades(true);
-
-  };
-
-  $scope.setGrau = function(input) {
-
-    if($scope.grau === input) {
-
-      return;
-
-    }
-
-    $scope.grau = input;
-
-    $scope.decisao = 'A';
-
-    loadProdutividades(true);
-
-  };
 
   $scope.produtividades = [];
 
@@ -193,25 +164,10 @@ angular.module('starter.controllers', ['MetasAppServices', 'MetasAppFilters', 'M
   };
 
   loadProdutividades(true);
-})
 
 
 
-
-
-.controller('LoadingCtrl', function($scope, $ionicLoading) {
-  $scope.show = function() {
-    $ionicLoading.show({
-      template: 'Loading...'
-    }).then(function(){
-       console.log("The loading indicator is now displayed");
-    });
-  };
-  $scope.hide = function(){
-    $ionicLoading.hide().then(function(){
-       console.log("The loading indicator is now hidden");
-    });
-  };
 });
+
 
   

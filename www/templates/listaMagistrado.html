@@ -9,14 +9,14 @@
   </label>
 </div>
 
-   <ion-list  >
-       <div class="row" ng-show="loadingProdutividades">
-      <div class="col-md-12">
-        <div class="alert alert-info">
+  <h1>{{m}}</h1>
+
+   <ion-list >
+    <div class="card " ng-show="loadingProdutividades">
+      <div class="item item-text-wrap dark">
           <b>Obtendo informações para o período {{mes | mesEstendido}}/{{ano}}.</b>
           <br/>
-          Por favor, aguarde...
-        </div>
+         <span>Por favor, aguarde...</span> 
       </div>
     </div>
 
@@ -41,9 +41,10 @@
   </div>
   -->
 
-      <ion-item ng-repeat="item in produtividades | filter:search" href="#/app/lista/{{item.magistradoId}}">
-      	<h3>{{item.magistrado}}</h3>
-      	<p>{{item.orgao}}</p>
+      <ion-item 
+      ng-repeat="item in produtividades | filter:search" href="#/app/processo/{{item.magistradoId}}">
+      	<h3 >{{item.magistrado}}</h3>
+      	<p >{{item.orgao}}</p>
       </ion-item>
 
   </ion-content> 

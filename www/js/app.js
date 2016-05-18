@@ -39,7 +39,7 @@ angular.module('starter', ['ionic', 'starter.controllers','MetasAppServices'])
   })
 
    .state('app.magistradoItem', {
-    url: '/lista/:processoId',
+    url: '/processo/:processoId',
     views: {
       'menuContent': {
         templateUrl: 'templates/magistradoItem.html',
@@ -49,5 +49,5 @@ angular.module('starter', ['ionic', 'starter.controllers','MetasAppServices'])
   })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/lista/:grauId');
+  $urlRouterProvider.otherwise('/app/lista/1');
 });

@@ -24,29 +24,29 @@
     </ion-header-bar>
     <ion-content ng-controller="MetaController">
       <ion-list>
-        <ion-item menu-close  href="#/app/lista/{{1}}" >
+        <ion-item menu-close  href="#/app/lista/1" >
              {{1 | grauEstendido}}
         </ion-item>
-       <ion-item menu-close href="#/app/lista/{{2}}" >
+       <ion-item menu-close href="#/app/lista/2" >
              {{2 | grauEstendido}}
         </ion-item>
     
 
-        <label class="item item-select"  >
-            {{mes | mesEstendido}}
-              <select >
-               <option ng-repeat="m in meses">{{m | mesEstendido}}</option> 
+        <label class="item item-select" >
+             <select >
+               <option ng-repeat="m in meses" ng-value="m"  >{{m | mesEstendido}}</option> 
+
               </select>
+              <span>{{m}}</span>
         </label>
 
-         <label class="item item-select " >
+         <label class="item item-select" >
             <span class="input-label">{{ano}}</span>
               <select>
                 <option ng-repeat="a in anos" >{{a}}</option>
               </select>
         </label>
 
-      
       </ion-list>
     </ion-content>
   </ion-side-menu>
